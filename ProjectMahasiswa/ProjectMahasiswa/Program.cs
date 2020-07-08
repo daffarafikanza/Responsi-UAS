@@ -140,5 +140,5 @@ namespace ProjectMahasiswa
               daftarMahasiswa.Add(new Mahasiswa {nim = _NIM,nama = _Nama,jeniskelamin = _Jeniskelamin,ipk = _IPK });
         
             }
-        }
+    }
  }
