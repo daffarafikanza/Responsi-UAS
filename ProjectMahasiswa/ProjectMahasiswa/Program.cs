@@ -135,10 +135,10 @@ namespace ProjectMahasiswa
                 nomorUrut++;
             }
         }
-             static void _mahasiswa(double _NIM, string _Nama, string _Jeniskelamin,double _IPK)
-            {
-              daftarMahasiswa.Add(new Mahasiswa {nim = _NIM,nama = _Nama,jeniskelamin = _Jeniskelamin,ipk = _IPK });
+        static void _mahasiswa(double _NIM, string _Nama, string _Jeniskelamin,double _IPK)
+        {
+            daftarMahasiswa.Add(new Mahasiswa {nim = _NIM,nama = _Nama,jeniskelamin = _Jeniskelamin,ipk = _IPK });
         
-            }
+        }
     }
- }
+}
