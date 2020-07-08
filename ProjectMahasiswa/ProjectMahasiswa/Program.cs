@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,8 +51,8 @@ namespace ProjectMahasiswa
             Console.WriteLine();
             Console.Write("\n1. Tambah Mahasiswa");
             Console.Write("\n2. Hapus Mahasiswa");
-            Console.Write("\n3. Tampilkan Mahasiswa");
-            Console.Write("\n4. Keluar");
+            Console.Write("\n3. Edit Mahasiswa");
+            Console.Write("\n4. Tampilkan Mahasiswa");
             Console.WriteLine();
             Console.Write("\nNomor Menu [1..4]: ");
         }
@@ -78,6 +78,11 @@ namespace ProjectMahasiswa
             Console.ReadKey();
         }
 
+private static void _mahasiswa(double _nim,double _nama,double _jeniskelamin,double _ipk)
+{
+ 	throw new NotImplementedException();
+}
+
         static void HapusMahasiswa()
         {
             Console.Clear();
@@ -89,14 +94,14 @@ namespace ProjectMahasiswa
             bool chek = false;
             for(int i = 0; i < daftarMahasiswa.Count; i++)
             {
-                if(daftarMahasiswa[i].NIM == _pilnim)
+                if(daftarMahasiswa[i].nim == _pilnim)
                 {
-                    var hapus = daftarMahasiswa.Single(r => r.NIM == _pilnim);
+                    var hapus = daftarMahasiswa.Single(r => r.nim == _pilnim);
                     Console.Write("Data mahasiswa berhasil di hapus");
-                    Console.Write("NIM\t\t: " + hapus.NIM);
-                    Console.Write("Nama\t: " + hapus.Nama);
-                    Console.Write("Jenis Kelamin\t: " + hapus.Jeniskelamin);
-                    Console.Write("IPK\t: " + hapus.IPK);
+                    Console.Write("NIM\t\t: " + hapus.nim);
+                    Console.Write("Nama\t: " + hapus.nama);
+                    Console.Write("Jenis Kelamin\t: " + hapus.jeniskelamin);
+                    Console.Write("IPK\t: " + hapus.ipk);
 
                     daftarMahasiswa.Remove(hapus);
                     chek = true;
@@ -126,19 +131,18 @@ namespace ProjectMahasiswa
         {
             Console.Clear();
 
+            // PERINTAH: lengkapi kode untuk menampilkan daftar mahasiswa yang ada di dalam collection
             int nomorUrut = 1;
             foreach(Mahasiswa mahasiswa in daftarMahasiswa)
             {
                 Console.WriteLine("NO.{0}" + " " + "NIM.{1}" + "\t" + "Nama : {2}" + "\t"+" kelamin : {3}"+"\t"+" IPK : {4}",
-                     nomorUrut, mahasiswa.NIM, mahasiswa.Nama, mahasiswa.Jeniskelamin, mahasiswa.IPK);
+                     nomorUrut, mahasiswa.nim, mahasiswa.nama, mahasiswa.jeniskelamin, mahasiswa.ipk);
                 nomorUrut++;
             }
 
-            // PERINTAH: lengkapi kode untuk menampilkan daftar mahasiswa yang ada di dalam collection
-
-              static void _mahasiswa(double _NIM, string _Nama, double _JK,double _IPK)
+              static void _mahasiswa(double _NIM, string _Nama, string _Jeniskelamin,double _IPK)
             {
-              daftarMahasiswa.Add(new Mahasiswa {NIM = _NIM,Nama = _Nama,Jeniskelamin = _jk,IPK = _IPK });
+              daftarMahasiswa.Add(new Mahasiswa {nim = _NIM,nama = _Nama,jeniskelamin = _Jeniskelamin,ipk = _IPK });
             }
-    }
+        }
 }
