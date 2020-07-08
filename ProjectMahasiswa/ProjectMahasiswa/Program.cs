@@ -72,8 +72,8 @@ namespace ProjectMahasiswa
             Console.Write("IPK\t: ");
             double _ipk = double.Parse(Console.ReadLine());
             Console.Write("Tekan ENTER untuk kembali ke menu");
-            
-            _mahasiswa(_nim,_nama,_jeniskelamin,_ipk);
+
+            _mahasiswa(_nim, _nama, _jeniskelamin, _ipk);
 
             Console.ReadKey();
         }
@@ -87,25 +87,25 @@ namespace ProjectMahasiswa
             Console.Write("Masukkan NIM Mahasiswa");
             double _pilnim = double.Parse(Console.ReadLine());
             bool chek = false;
-            for(int i = 0; i < daftarMahasiswa.Count; i++)
+            for (int i = 0; i < daftarMahasiswa.Count; i++)
             {
-                if(daftarMahasiswa[i].nim == _pilnim)
+                if (daftarMahasiswa[i].nim == _pilnim)
                 {
                     var hapus = daftarMahasiswa.Single(r => r.nim == _pilnim);
                     Console.Write("Data mahasiswa berhasil di hapus");
-                    Console.Write("NIM\t\t: " + hapus.nim);
+                    Console.Write("NIM\t: " + hapus.nim);
                     Console.Write("Nama\t: " + hapus.nama);
                     Console.Write("Jenis Kelamin\t: " + hapus.jeniskelamin);
                     Console.Write("IPK\t: " + hapus.ipk);
 
-                    daftarMahasiswa.Remove(hapus);
-                    chek = true;
+                    // daftarMahasiswa.Remove(hapus);
+                    // chek = true;
                     Console.Write("Apakah yakin ingin menghapus data??[Tekan y/n} : ");
                     char lanjut = char.Parse(Console.ReadLine());
                     if (lanjut == 'y' || lanjut == 'y')
                     {
                         daftarMahasiswa.Remove(hapus);
-                        Console.WriteLine("Data Mahasiswa berhasil dihapus");
+                        Console.WriteLine("Data Mahasiswa berhasil ditemukan");
                     }
                     else
                     {
@@ -113,13 +113,13 @@ namespace ProjectMahasiswa
                     }
                     chek = true;
                 }
-                if(!chek)
+                if (!chek)
                 {
-                   Console.WriteLine("NIM tidak ditemukan");
+                    Console.WriteLine("NIM tidak ditemukan");
                 }
             }
-                    Console.WriteLine("\nTekan ENTER untuk kembali ke menu");
-                    Console.ReadKey();
+            Console.WriteLine("\nTekan ENTER untuk kembali ke menu");
+            Console.ReadKey();
         }
 
         static void TampilMahasiswa()
@@ -130,15 +130,15 @@ namespace ProjectMahasiswa
             int nomorUrut = 1;
             foreach (Mahasiswa mahasiswa in daftarMahasiswa)
             {
-                Console.WriteLine("NO.{0}" + " " + "NIM.{1}" + "\t" + "Nama : {2}" + "\t" + " kelamin : {3}" + "\t" + " IPK : {4}",
+                Console.WriteLine("NO.{0}" + " " + "NIM.{1}" + "\t" + "Nama : {2}" + "\t" + " Jeniskelamin : {3}" + "\t" + " IPK : {4}",
                      nomorUrut, mahasiswa.nim, mahasiswa.nama, mahasiswa.jeniskelamin, mahasiswa.ipk);
                 nomorUrut++;
             }
         }
-        static void _mahasiswa(double _NIM, string _Nama, string _Jeniskelamin,double _IPK)
+        static void _mahasiswa(double _NIM, string _Nama, string _Jeniskelamin, double _IPK)
         {
-            daftarMahasiswa.Add(new Mahasiswa {nim = _NIM,nama = _Nama,jeniskelamin = _Jeniskelamin,ipk = _IPK });
-        
+            daftarMahasiswa.Add(new Mahasiswa { nim = _NIM, nama = _Nama, jeniskelamin = _Jeniskelamin, ipk = _IPK });
+
         }
     }
 }
