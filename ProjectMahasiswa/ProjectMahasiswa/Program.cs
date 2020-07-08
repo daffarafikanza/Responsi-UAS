@@ -66,9 +66,9 @@ namespace ProjectMahasiswa
             Console.Write("NIM\t: ");
             double _nim = double.Parse(Console.ReadLine());
             Console.Write("Nama\t: ");
-            double _nama = double.Parse(Console.ReadLine());
+            string _nama = Console.ReadLine();
             Console.Write("Jenis Kelamain [L/P]\t: ");
-            double _jeniskelamin = double.Parse(Console.ReadLine());
+            string _jeniskelamin = Console.ReadLine();
             Console.Write("IPK\t: ");
             double _ipk = double.Parse(Console.ReadLine());
             Console.Write("Tekan ENTER untuk kembali ke menu");
@@ -77,11 +77,6 @@ namespace ProjectMahasiswa
 
             Console.ReadKey();
         }
-
-private static void _mahasiswa(double _nim,double _nama,double _jeniskelamin,double _ipk)
-{
- 	throw new NotImplementedException();
-}
 
         static void HapusMahasiswa()
         {
@@ -133,16 +128,17 @@ private static void _mahasiswa(double _nim,double _nama,double _jeniskelamin,dou
 
             // PERINTAH: lengkapi kode untuk menampilkan daftar mahasiswa yang ada di dalam collection
             int nomorUrut = 1;
-            foreach(Mahasiswa mahasiswa in daftarMahasiswa)
+            foreach (Mahasiswa mahasiswa in daftarMahasiswa)
             {
-                Console.WriteLine("NO.{0}" + " " + "NIM.{1}" + "\t" + "Nama : {2}" + "\t"+" kelamin : {3}"+"\t"+" IPK : {4}",
+                Console.WriteLine("NO.{0}" + " " + "NIM.{1}" + "\t" + "Nama : {2}" + "\t" + " kelamin : {3}" + "\t" + " IPK : {4}",
                      nomorUrut, mahasiswa.nim, mahasiswa.nama, mahasiswa.jeniskelamin, mahasiswa.ipk);
                 nomorUrut++;
             }
-
-              static void _mahasiswa(double _NIM, string _Nama, string _Jeniskelamin,double _IPK)
+        }
+             static void _mahasiswa(double _NIM, string _Nama, string _Jeniskelamin,double _IPK)
             {
               daftarMahasiswa.Add(new Mahasiswa {nim = _NIM,nama = _Nama,jeniskelamin = _Jeniskelamin,ipk = _IPK });
+        
             }
         }
-}
+ }
