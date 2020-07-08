@@ -31,6 +31,8 @@ namespace ProjectMahasiswa
 
                     case 3:
                         TampilMahasiswa();
+                        Console.WriteLine("\nTekan enter untuk kembali ke menu");
+                        Console.ReadKey();
                         break;
 
                     case 4: // keluar dari program
@@ -92,14 +94,13 @@ namespace ProjectMahasiswa
                 if (daftarMahasiswa[i].nim == _pilnim)
                 {
                     var hapus = daftarMahasiswa.Single(r => r.nim == _pilnim);
-                    Console.Write("Data mahasiswa berhasil di hapus");
                     Console.Write("NIM\t: " + hapus.nim);
                     Console.Write("Nama\t: " + hapus.nama);
                     Console.Write("Jenis Kelamin\t: " + hapus.jeniskelamin);
                     Console.Write("IPK\t: " + hapus.ipk);
 
                     // daftarMahasiswa.Remove(hapus);
-                    // chek = true;
+                    // chek = true;a
                     Console.Write("Apakah yakin ingin menghapus data??[Tekan y/n} : ");
                     char lanjut = char.Parse(Console.ReadLine());
                     if (lanjut == 'y' || lanjut == 'y')
