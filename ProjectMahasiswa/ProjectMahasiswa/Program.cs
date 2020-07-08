@@ -51,8 +51,8 @@ namespace ProjectMahasiswa
             Console.WriteLine();
             Console.Write("\n1. Tambah Mahasiswa");
             Console.Write("\n2. Hapus Mahasiswa");
-            Console.Write("\n3. Edit Mahasiswa");
-            Console.Write("\n4. Tampilkan Mahasiswa");
+            Console.Write("\n3. Tampilkan Mahasiswa");
+            Console.Write("\n4. Keluar");
             Console.WriteLine();
             Console.Write("\nNomor Menu [1..4]: ");
         }
